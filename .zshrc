@@ -4,3 +4,9 @@ alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 alias zippy='zip -0 archive.zip -r . -x "*node_modules/*" "*.git/*" "*.DS_Store" "*.Thumbs.db"'
 
 alias reload='. ~/.zshrc'
+
+downloadFile() {
+	filename=$(basename $1)
+
+	curl -o ~/Desktop/$filename $1
+}
